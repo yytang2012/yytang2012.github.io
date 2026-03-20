@@ -16,20 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/teaching/";
-          },
         },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
         
           title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
@@ -54,9 +40,6 @@ ninja.data = [{
         },
       },{id: "news-serving-as-tpc-member-for-ieee-icdcs-2026-ccf-b-and-ieee-icccn-2026-ccf-c",
           title: 'Serving as TPC member for IEEE ICDCS 2026 (CCF-B) and IEEE ICCCN 2026...',
-          description: "",
-          section: "News",},{id: "news-awarded-guangxi-s-amp-amp-t-program-grant-key-laboratory-capacity-building-as-pi",
-          title: 'Awarded Guangxi S&amp;amp;amp;T Program grant (Key Laboratory Capacity Building) as PI.',
           description: "",
           section: "News",},{id: "news-two-papers-accepted-at-ieee-icme-2026-rl-adapttrack-and-blurtrack",
           title: 'Two papers accepted at IEEE ICME 2026: RL-AdaptTrack and BlurTrack.',

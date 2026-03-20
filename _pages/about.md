@@ -27,10 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a Professor (研究员) at the [School of Artificial Intelligence](https://www.guet.edu.cn/sai/), Guilin University of Electronic Technology (GUET). I received my Ph.D. in Computer Science from the [College of William & Mary](https://www.wm.edu/) in 2018, advised by [Prof. Qun Li](https://www.cs.wm.edu/~liqun/) (IEEE Fellow). Before joining GUET, I worked as a Senior Engineer / Senior Data Scientist at Walmart Global Tech in the United States (2018–2022), where I led teams to develop and deploy large-scale AI systems in production.
+I am a Professor (研究员) at the [School of Artificial Intelligence](https://www.guet.edu.cn/sai/), Guilin University of Electronic Technology (GUET). I received my Ph.D. from the [College of William & Mary](https://www.wm.edu/) in 2018, advised by [Prof. Qun Li](https://www.cs.wm.edu/~liqun/) (IEEE Fellow). Before joining GUET, I worked at Walmart Global Tech in the US (2018–2022) as a Senior Engineer / Senior Data Scientist.
 
-My research interests include **Computer Vision** (object tracking, detection, and classification), **UAV Intelligent Perception**, **Edge Computing & Edge Intelligence**, **Embodied AI & Vision-Language-Action Models (VLA)**, and **Multi-Agent Collaboration**. My current work focuses on robust multi-object tracking under adverse conditions (low-light, fog, motion blur) for UAV applications.
+My research interests include **Computer Vision**, **UAV Intelligent Perception**, **Edge Intelligence**, **Embodied AI & VLA**, and **Multi-Agent Collaboration**.
 
-I have published in top-tier venues including ACM CCS, IEEE/ACM ICSE, IEEE TC, ACM UbiComp, and IEEE INFOCOM. I hold 18 invention patents (4 US, 14 China).
-
-**I am actively recruiting motivated Master's students.** If you are interested in deep learning, computer vision, UAV perception, or embodied AI, please feel free to [contact me](mailto:yutao.tang@guet.edu.cn).
+**I am actively recruiting motivated Master's students.** Please feel free to [contact me](mailto:yutao.tang@guet.edu.cn).

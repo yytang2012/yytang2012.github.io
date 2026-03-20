@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://yytang2012.github.io/sitemap.xml

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yutao Tang — Professor, GUET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background: #fff;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Layout container ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Sticky nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    nav .nav-name {
+      font-size: 17px;
+      font-weight: 600;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+      transition: color 0.15s;
+    }
+
+    nav .nav-links a:hover {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    /* ── Sections ── */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #111;
+      margin-top: 36px;
+      margin-bottom: 16px;
+    }
+
+    /* ── About ── */
+    .about-body {
+      overflow: hidden; /* clearfix for float */
+    }
+
+    .prof-photo {
+      float: right;
+      margin: 0 0 20px 32px;
+      width: 150px;
+      border-radius: 8px;
+      display: block;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+
+    .about-body p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .about-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── Publications ── */
+    .pub-list {
+      list-style: none;
+    }
+
+    .pub-list li {
+      padding: 18px 0;
+      border-bottom: 1px solid #f4f4f4;
+    }
+
+    .pub-list li:last-child {
+      border-bottom: none;
+    }
+
+    .pub-title {
+      font-weight: 600;
+      font-size: 15.5px;
+      color: #111;
+      display: block;
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+
+    .pub-authors {
+      font-size: 14px;
+      color: #555;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .pub-venue {
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+      display: block;
+    }
+
+    .pub-role {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 12.5px;
+      font-style: normal;
+      color: #999;
+      font-weight: 500;
+      background: #f7f7f7;
+      border-radius: 4px;
+      padding: 1px 8px;
+    }
+
+    /* Full list — slightly more compact */
+    .pub-list-full li {
+      padding: 12px 0;
+    }
+
+    .pub-list-full .pub-title {
+      font-size: 14.5px;
+    }
+
+    .pub-list-full .pub-authors,
+    .pub-list-full .pub-venue {
+      font-size: 13.5px;
+    }
+
+    /* ── Contact ── */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      min-width: 120px;
+      color: #111;
+      flex-shrink: 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 28px 0;
+      text-align: center;
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .prof-photo {
+        float: none;
+        display: block;
+        margin: 0 auto 24px auto;
+        width: 120px;
+      }
+
+      nav .nav-links {
+        gap: 16px;
+      }
+
+      nav .nav-name {
+        font-size: 15px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <nav>
+    <div class="container">
+      <span class="nav-name">Yutao Tang</span>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── About ── -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-body">
+        <img
+          src="assets/img/prof_pic.jpg"
+          alt="Yutao Tang"
+          class="prof-photo"
+        />
+        <p>
+          I am a Professor (研究员) at the School of Artificial Intelligence,
+          Guilin University of Electronic Technology (GUET). I received my
+          Ph.D. from the College of William &amp; Mary in 2018, advised by
+          Prof. Qun Li (IEEE Fellow). Before joining GUET, I worked at
+          Walmart Global Tech in the US (2018–2022) as a Senior Engineer /
+          Senior Data Scientist.
+        </p>
+        <p>
+          My research interests include Computer Vision, UAV Intelligent
+          Perception, Edge Intelligence, Embodied AI &amp; VLA, and
+          Multi-Agent Collaboration.
+        </p>
+        <p>
+          I am actively recruiting motivated Master's students. Please feel
+          free to contact me.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Publications ── -->
+  <section id="publications">
+    <div class="container">
+      <h2>Selected Publications</h2>
+
+      <ul class="pub-list">
+
+        <li>
+          <span class="pub-title">
+            RL-AdaptTrack: Reinforcement Learning-based Adaptive Frame Rate
+            Control for Efficient Multi-Object Tracking
+          </span>
+          <span class="pub-authors">
+            Lingying Zhao, Xujiang Tang, Chenguang Wang, Rui Qiu,
+            Zhengrui Qin, Guangxi Chen, <strong>Yutao Tang</strong>
+          </span>
+          <span class="pub-venue">
+            IEEE International Conference on Multimedia and Expo (ICME), 2026
+          </span>
+          <span class="pub-role">Corresponding author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            BlurTrack: Taming Dual-Motion Blur in UAV Multi-Object Tracking
+            via Relative Blur Adaptation
+          </span>
+          <span class="pub-authors">
+            Xujiang Tang, Lingying Zhao, Rui Qiu, Zhengrui Qin,
+            Guangxi Chen, <strong>Yutao Tang</strong>
+          </span>
+          <span class="pub-venue">
+            IEEE International Conference on Multimedia and Expo (ICME), 2026
+          </span>
+          <span class="pub-role">Corresponding author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            Distance-Aware Tri-Perspective View for Efficient 3D Perception
+            in Autonomous Driving
+          </span>
+          <span class="pub-authors">
+            <strong>Yutao Tang</strong>, Jigang Zhao, Zhengrui Qin, Rui Qiu,
+            Lingying Zhao, Jie Ren, Guangxi Chen
+          </span>
+          <span class="pub-venue">
+            Computer Graphics Forum (Pacific Graphics), 2025
+          </span>
+          <span class="pub-role">Co-first author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            vTrust: Remotely Executing Mobile Apps Transparently With Local
+            Untrusted OS
+          </span>
+          <span class="pub-authors">
+            <strong>Yutao Tang</strong>, Zhengrui Qin, Zhiqiang Lin, Yue Li,
+            Shanhe Yi, Fengyuan Xu, Qun Li
+          </span>
+          <span class="pub-venue">
+            IEEE Transactions on Computers, vol. 71, no. 12,
+            pp. 3349–3360, 2022
+          </span>
+          <span class="pub-role">First author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            User Input Enrichment via Sensing Devices
+          </span>
+          <span class="pub-authors">
+            <strong>Yutao Tang</strong>, Yue Li, Qun Li, Kun Sun,
+            Haining Wang, Zhengrui Qin
+          </span>
+          <span class="pub-venue">
+            Computer Networks, vol. 196, 2021
+          </span>
+          <span class="pub-role">First author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            NodeMerge: Template Based Efficient Data Reduction For Big-Data
+            Causality Analysis
+          </span>
+          <span class="pub-authors">
+            <strong>Yutao Tang</strong>, Ding Li, Zhichun Li, Mu Zhang,
+            Kangkook Jee, Xusheng Xiao, Zhenyu Wu, Junghwan Rhee,
+            Fengyuan Xu, Qun Li
+          </span>
+          <span class="pub-venue">
+            ACM Conference on Computer and Communications Security (CCS), 2018
+          </span>
+          <span class="pub-role">First author</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            MobiPlay: A Remote Execution Based Record-and-Replay Tool for
+            Mobile Applications
+          </span>
+          <span class="pub-authors">
+            Zhengrui Qin, <strong>Yutao Tang</strong>, Ed Novak, Qun Li
+          </span>
+          <span class="pub-venue">
+            IEEE/ACM International Conference on Software Engineering
+            (ICSE), 2016
+          </span>
+          <span class="pub-role">Co-first author</span>
+        </li>
+
+      </ul>
+
+      <!-- Full list -->
+      <h3>Full Publication List</h3>
+
+      <ul class="pub-list pub-list-full">
+
+        <li>
+          <span class="pub-title">
+            RDFNet: Real-time Object Detection Framework for Foggy Scenes
+          </span>
+          <span class="pub-authors">
+            Tianle Fang, Zhenbing Liu, <strong>Yutao Tang</strong>,
+            Yingxin Huang, Haoxiang Lu, Chuangtao Zheng
+          </span>
+          <span class="pub-venue">IEEE ICME, 2025</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            SOD-UAV: Small Object Detection for UAV Images via Improved
+            YOLOv7
+          </span>
+          <span class="pub-authors">
+            Yujie Li, Yifu Wang, Zihang Ma, Xinghe Wang,
+            <strong>Yutao Tang</strong>
+          </span>
+          <span class="pub-venue">IEEE ICASSP, 2024</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            Physical Media Covert Channels on Smart Mobile Devices
+          </span>
+          <span class="pub-authors">
+            Ed Novak, <strong>Yutao Tang</strong>, Zijiang Hao, Qun Li,
+            Yifan Zhang
+          </span>
+          <span class="pub-venue">ACM UbiComp, 2015</span>
+        </li>
+
+        <li>
+          <span class="pub-title">
+            SMOC: A Secure Mobile Cloud Computing Platform
+          </span>
+          <span class="pub-authors">
+            Zijiang Hao, <strong>Yutao Tang</strong>, Yifan Zhang,
+            Ed Novak, Nancy Carter, Qun Li
+          </span>
+          <span class="pub-venue">IEEE INFOCOM, 2015</span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">Email</span>
+          <a href="mailto:yutao.tang@guet.edu.cn">yutao.tang@guet.edu.cn</a>
+        </li>
+        <li>
+          <span class="contact-label">Google Scholar</span>
+          <a
+            href="https://scholar.google.com/citations?user=yytang2012"
+            target="_blank"
+            rel="noopener"
+          >scholar.google.com</a>
+        </li>
+        <li>
+          <span class="contact-label">Affiliation</span>
+          <span>
+            School of Artificial Intelligence,<br />
+            Guilin University of Electronic Technology,<br />
+            Guilin, China
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      &copy; 2025 Yutao Tang
+    </div>
+  </footer>
+
+</body>
+</html>
